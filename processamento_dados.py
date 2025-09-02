@@ -48,20 +48,23 @@ def sem_html(texto):
     return re.sub(r'<.*?>', '', texto)
 
 
+def processar_dados():
+    noticias_brutas = coleta_dados()
 
-noticias_brutas = coleta_dados()
+    if not noticias_brutas:
+        print("Nenhuma notícia coletada.")
+    else:
+        print(f"{len(noticias_brutas)} notícias.")
+        df = pd.DataFrame(noticias_brutas)
+        
+        df['descricao'] = df['descricao'].apply(sem_html)
+        df['titulo'] = df['titulo'].apply(sem_html)
 
-if not noticias_brutas:
-    print("Nenhuma notícia coletada.")
-else:
-    print(f"{len(noticias_brutas)} notícias.")
-    df = pd.DataFrame(noticias_brutas)
+        df["texto_completo"] = df["titulo"] + " " + df["descricao"]
+        df['sentimento'] = df['texto_completo'].apply(sentimento)
+    return df
+
+if __name__ == '__main__':
+    df_final = processar_dados()
+    print(df_final.head())
     
-    df['descricao'] = df['descricao'].apply(sem_html)
-    df['titulo'] = df['titulo'].apply(sem_html)
-
-    df["texto_completo"] = df["titulo"] + " " + df["descricao"]
-    df['sentimento'] = df['texto_completo'].apply(sentimento)
-
-    print(df[['titulo', 'descricao', 'sentimento']])
-          
