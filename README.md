@@ -4,8 +4,6 @@
 
 Este projeto é um dashboard interativo construído em Python e Streamlit que coleta, processa e analisa notícias em tempo real sobre o tema "Inteligência Artificial no Piauí". O objetivo é fornecer uma visão geral do tom da cobertura da mídia sobre o assunto, identificando tendências e os principais temas discutidos.
 
-Este é um projeto de portfólio desenvolvido para demonstrar habilidades em todo o ciclo de vida de um projeto de dados, desde a coleta até a visualização.
-
 ## ✨ Funcionalidades Principais
 
 - **Coleta de Dados em Tempo Real:** Utiliza o feed RSS do Google Notícias para buscar as notícias mais recentes.
