@@ -63,6 +63,7 @@ A aplicação será aberta automaticamente no seu navegador.
 ├── processamento_dados.py  # Módulo para limpeza dos dados e análise de sentimento.
 ├── dashboard.py          # Script principal que constrói a aplicação Streamlit.
 ├── requirements.txt      # Lista de dependências do projeto.
+├── noticias_processadas.csv   # Arquivo CSV gerado pelo script com os dados coletados.
 └── README.md             # Este arquivo.
 ```
 
